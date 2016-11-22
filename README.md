@@ -1,6 +1,13 @@
 # AB_Redirect_Tool
 ABテスト用ツール
 
+# 更新履歴
+### 1.0
+リリース
+
+### 1.0.1
+redirect.phpにつくパラメータを入れ替えました
+
 # 使い方
 ## 記事ABテスト機能
 1.abredirectフォルダをwp-content/plugins/にアップロード  
@@ -22,5 +29,5 @@ http://example.com/archives/10?abgroup=a&creative=001
 上記URLにアクセスした場合  
 1.AB test groupに｢a｣というスラッグものを持っているものがランダム表示  
 2.記事中のabredirectクラスを持つaタグが下記のように置き換えられる  
-http://example.com/wp-content/plugins/abredirect/redirect.php?url={リンク先URL}&creative=001  
+http://example.com/wp-content/plugins/abredirect/redirect.php?creative=001&url={リンク先URL}
 3.リンク先でのリファラは上記のURLになる(はず)  
