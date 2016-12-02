@@ -2,7 +2,7 @@
 /*
 Plugin Name: AB Redirect Tool
 Description: 記事をランダムでアレします
-Version: 1.0.1
+Version: 1.0.2
 Author: Satoshi Ookido
 License: GPL
 
@@ -96,7 +96,10 @@ add_action('wp','redirect_abpost');
 function abparamtojs() {
     $abredirect_path = plugins_url( '', __FILE__ );
     $creative_param = get_query_var('creative',null);
-    echo '<script>var abredirect_path = "'.$abredirect_path.'",creative_param = "'.$creative_param.'";</script>';
+    $postid = get_the_ID();
+    if(is_single()){
+        echo '<script>var abredirect_path = "'.$abredirect_path.'",creative_param = "'.$creative_param.'p'.get_the_ID().'";</script>';
+    }
 }
 add_action('wp_head','abparamtojs');
 
